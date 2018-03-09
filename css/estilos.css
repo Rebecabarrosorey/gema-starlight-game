@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #afc1f6;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.cabecera {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: 8px solid yellow;
+    color: yellow;
+    font-size: 40px;
+    padding: 10px 20px;
+    background-color:#afc1f6;
+    border-radius: 10px;
+    font-family: 'Bowlby One SC', cursive;
+    z-index: 30; /*Por si lo abro en una pantalla mas pequeña, aunque no afecta a lo demas*/
+}
+
+#reloj {
+    color: yellow;
+    font-size: 40px;
+}
+
+
+.rejilla {
+    margin: -1000px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 1000ms ease-in-out;
+    
+}
+
+.rejilla.start {
+    margin: 0 auto;
+}
+
+.rejilla.out {
+    margin: -1000px auto;
+}
+
+#game-over {
+    /* display: none; se elimina*/
+    opacity: 0;
+    position: fixed;
+    font-size: 160px;
+    color: yellow;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+     /* z-index: 10; */
+    text-align: center;
+    transition: 2s all ease-in-out;
+    z-index: -5;
+}
+
+.tarjeta {
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 400ms linear;
+}
+
+
+.anverso {
+    height: 150px;
+    width: 150px;
+    background-image: url("../img/LogoGemaStarlight.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    backface-visibility: hidden;
+    /* background-color: pink; */
+}
+
+.reverso {
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.seleccionado {
+    transform: rotateY(180deg);
+}
+
+.eliminado .anverso {
+    background-image: none !important;
+}
+
+#winner {
+    font-size: 160px;
+    color: pink;
+    position: fixed; 
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    transition: all 500ms ease-in-out;
+}
+
+#winner.open {
+    top: 50%;
+}
+
